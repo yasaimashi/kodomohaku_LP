@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="体験も参加も大歓迎！みんなで夢中になろう！" />
+    <meta name="keywords" content="東北こども博,こども博,東北こども,こどもはく,おもちゃ,仙台大学" />
+    <title>2026 東北こども博</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css" media="all" rel="stylesheet" />
+    <link href="parts/font-awesome.min.css" media="all" rel="stylesheet" />
+    <link rel="stylesheet" href="parts/style.css" />
+    <script type="text/javascript" src="parts/js/setting.js"></script>
+    <style>
+      #auth-overlay {
+        position: fixed;
+        inset: 0;
+        background: #80c8ef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      #auth-box {
+        background: #fff;
+        border-radius: 16px;
+        padding: 40px 32px;
+        text-align: center;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        max-width: 320px;
+        width: 90%;
+      }
+      #auth-box h2 {
+        margin: 0 0 8px;
+        font-size: 1.3em;
+        color: #005bac;
+      }
+      #auth-box p {
+        margin: 0 0 20px;
+        font-size: 0.9em;
+        color: #555;
+      }
+      #auth-input {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 1em;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        margin-bottom: 12px;
+        outline: none;
+      }
+      #auth-input:focus {
+        border-color: #005bac;
+      }
+      #auth-btn {
+        width: 100%;
+        padding: 10px;
+        background: #005bac;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      #auth-btn:hover {
+        background: #003b6f;
+      }
+      #auth-error {
+        color: #e60012;
+        font-size: 0.85em;
+        margin-top: 10px;
+        display: none;
+      }
+    </style>
+    <script>
+      (function () {
+        var PASSWORD = "sen2026";
+        var SESSION_KEY = "kodomohaku_auth";
+        function unlock() {
+          var overlay = document.getElementById("auth-overlay");
+          if (overlay) overlay.remove();
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+          if (sessionStorage.getItem(SESSION_KEY) === "1") {
+            unlock();
+            return;
+          }
+          var input = document.getElementById("auth-input");
+          var btn = document.getElementById("auth-btn");
+          var err = document.getElementById("auth-error");
+          function tryAuth() {
+            if (input.value === PASSWORD) {
+              sessionStorage.setItem(SESSION_KEY, "1");
+              unlock();
+            } else {
+              err.style.display = "block";
+              input.value = "";
+              input.focus();
+            }
+          }
+          btn.addEventListener("click", tryAuth);
+          input.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") tryAuth();
+          });
+        });
+      })();
+    </script>
+  </head>
+
+   <body>
+    <div id="auth-overlay">
+      <div id="auth-box">
+        <h2>2026 東北こども博</h2>
+        <p>パスワードを入力してください</p>
+        <input type="password" id="auth-input" placeholder="パスワード" />
+        <button id="auth-btn">入力</button>
+        <div id="auth-error">パスワードが違います</div>
+      </div>
+    </div>
+    <div id="top-wrapper">
+      <div id="top-visual">
+        <div class="visual-spacer"></div>
+                <div class="cloud-strip">
+          <div class="cloud-track">
+            <img src="images/cloud.png" alt="" />
+            <img src="images/cloud.png" alt="" />
+          </div>
+        </div>
+        <h1 style="margin: 0"><img src="images/top.png" alt="東北こども博" class="v-pc" /><img src="images/top.png" alt="東北こども博" class="v-sp" /></h1>
+        <div class="top-link">
+          <div class="guidebook-row">
+            <div class="guidebook-links">
+              <a href="https://www.sendaidaigaku.jp/kodomohaku/tohoku-kodomohaku_guidebook2024.pdf" target="_blank" class="buttonIconText__reverse">東北こども博ガイドブックVol.8<span>（2026.0.00）</span></a>
+            </div>
+          <ul class="sns-links">
+            <li>
+              <a href="https://x.com/tkodomohaku" target="_blank"><img src="images/sns-x.png" alt="X" /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/tohokukodomohaku/" target="_blank"><img src="images/sns-instagram.png" alt="Instagram" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+        <img class="flag-banner flag-pc" src="images/flag.png" alt="" />
+        <img class="flag-banner flag-sp" src="images/flag-sp.png" alt="" />
+<img class="kirakira kirakira1 v-pc" src="images/kirakira1.png" alt="" />
+<img class="kirakira kirakira2 v-pc" src="images/kirakira2.png" alt="" />
+      </div>
+
+      <div class="top-content">
+        <div class="container">
+          <div class="infosik">
+            <img src="images/tp1.png" alt="日時:2025年10月11日（土） 開催時間／10:00〜16:00" />
+            <img src="images/tp2.png" alt="場所:仙台大学 宮城県柴田郡柴田町船岡南2-2-18 雨天決行※荒天中止の可能性があります。当日の開催状況はこども博公式SNSよりご確認ください" />
+          </div>
+        </div>
+      </div>
+
+      <div class="top-option">
+        <div class="container">
+          <div class="iwrap">
+            <div class="ibox">
+              <div class="mapimg"><img src="images/map.png" alt="会場案内マップ" width="100%" /></div>
+              <ul>
+                <li class="indent">★臨時駐車場は <span>①</span>船岡支援学校 <span>②</span>仙台大学船岡南グランド <span>③</span>陸上自衛隊船岡駐屯地 となります。</li>
+                <li class="indent">★お申し込み後の変更等は致しかねます。内容をよくお確かめの上、お申し込みください。</li>
+                <li class="indent">※事前予約をされていない方の駐車はできません。</li>
+                <li class="indent">※お申し込み者数が上限に達し次第、事前予約を締め切らせて頂きますので予めご了承ください。<br /><br /></li>
+                <li class="caution">室内シューズ（うわばき・スリッパ）をお持ちください。</li>
+              </ul>
+            </div>
+            <div class="ibox">
+              <div class="card-flex">
+                <img src="images/bus.png" alt="無料シャトルバスを運行します JR船岡駅⇄	仙台大学 駐車場	⇄仙台大学 ※できるだけ公共交通機関をご利用くださいますよう、ご協力をお願いいたします。" />
+
+                  <a href="https://www.sendaidaigaku.jp/kodomohaku/shuttle_bus.pdf" target="_blank" class="timetable-button"><div class="timetable">シャトルバスの運行表はこちら</div></a>
+                </div>
+                <img src="images/parking.png" alt="駐車場・イベント 駐車場:全て事前予約制 イベント:一部イベントは事前予約制 ※各申し込みにはGoogleアカウントが必要となります。" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="container">
+            <p>事前予約は下記リンクよりお申し込みください。</p>
+          <div class="iwrap">
+            <div class="reservation">
+              <a href="#">
+                <div class="v-pc">
+                <img src="images/bot.png" alt=""></div>
+                <div  class="v-sp">
+                <img src="images/bot_sp.png" alt=""></div>
+                <div class="reservation-text">駐車場の事前申込</div>
+              </a>
+            </div>
+            <div class="reservation">
+              <a href="#">
+                <div class="v-pc">
+                <img src="images/bot.png" alt=""></div>
+                <div  class="v-sp">
+                <img src="images/bot_sp.png" alt=""></div>
+                <div class="reservation-text textleft">□□□□□□□</br>□□□□□□</div>
+              </a>
+            </div>
+            <div class="reservation">
+              <a href="#">
+                <div class="v-pc">
+                <img src="images/bot.png" alt=""></div>
+                <div  class="v-sp">
+                <img src="images/bot_sp.png" alt=""></div>
+                <div class="reservation-text textleft">□□□□□□□</br>□□□□□□</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-snslink">
+        <div class="container">
+          <ul class="sns-links">
+            <li>
+              <a href="https://x.com/tkodomohaku" target="_blank"><img src="images/sns-x.png" alt="X" /><br />東北こども博【仙台大学】<br />@tkodomohaku</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/tohokukodomohaku/" target="_blank"><img src="images/sns-instagram.png" alt="Instagram" /><br />東北こども博【公式】<br />@tohokukodomohaku</a>
+            </li>
+          </ul>
+          <p class="t-c fs-s">※来場者を含む会場内の映像、写真が公開されることがありますので予めご了承ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="partner">
+      <div class="container">
+        <div class="part">
+        <p>【主催】<span>柴田町／仙台大学</span><br>【後援】文部科学省／宮城県／宮城県教育委員会　<br class="v-sp" />【協力】陸上自衛隊船岡駐屯地</p>
+        </div>
+        <div class="partner-links">
+        <a href="https://www.sendaidaigaku.jp/kodomohaku/sponsor.pdf" target="_blank" class="buttonIconText__reverse02">協力企業のご紹介</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <div id="uneicop">
+          <p>
+            お問い合わせ先<span class="v-pc">：</span><br class="v-sp" />仙台大学2026東北こども博実行委員会<br />
+            TEL.0224-55-1207　<br class="v-sp" />MAIL:kodomohaku@sendai-u.ac.jp
+          </p>
+        </div>
+      </div>
+
+      <div id="ptopwrap">
+        <a href="#top-wrapper"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+    <!-- /footer -->
+  </body>
+</html>
